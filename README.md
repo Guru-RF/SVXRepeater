@@ -16,13 +16,13 @@ git clone https://github.com/Guru-RF/SVXRepeater.git
 
 ### Audio and Radio module installation script ###
 ```console
-cd SVXSpot
+cd SVXRepeater
 sudo bash install-radiomodule.sh
 ```
 
 ### SVXLink installation script ###
 ```console
-cd SVXSpot
+cd SVXRepeater
 sudo bash install-svxlink.sh
 ```
 
