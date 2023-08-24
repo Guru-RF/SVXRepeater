@@ -25,12 +25,3 @@ sudo bash install-radiomodule.sh
 cd SVXRepeater
 sudo bash install-svxlink.sh
 ```
-
-### GPIO Pins
-Description of the GPIO pins
-```text
-GPIO 7 -> output ... Drive High for disabling the audio bypass (audio is in bypass by default)
-GPIO 8 -> output ... Optional PTT bypss (see breakout)
-GPIO 16 -> output ... Drive PTT (for any type of PTT (relay)
-GPIO 12 -> input ... COS ... depending on your tranceiver ... logic voltage can be between 3.3v and 24v
-```
