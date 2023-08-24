@@ -26,8 +26,11 @@ cd SVXRepeater
 sudo bash install-svxlink.sh
 ```
 
-### Simple Test ###
-Sending D1# dtmf on the configured frequency starts the parrot.
-
-### SVXLink Hotspot in action ###
-https://github.com/Guru-RF/SVXSpot/assets/1251767/50dd4366-8439-4067-83b5-5866d0adca77
+### GPIO Pins
+Description of the GPIO pins
+```text
+GPIO 7 -> output ... Drive High for disabling the audio bypass (audio is in bypass by default)
+GPIO 8 -> output ... Optional PTT bypss (see breakout)
+GPIO 16 -> output ... Drive PTT (for any type of PTT (relay)
+GPIO 12 -> input ... COS ... depending on your tranceiver ... logic voltage can be between 3.3v and 24v
+```
