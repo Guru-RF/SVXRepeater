@@ -14,7 +14,7 @@ say () {
 MYPATH=${PWD}
 
 say "Installing SVXLink Prerequisites"
-run "apt install build-essential g++ make cmake libsigc++-2.0-dev php8.0 libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet sox -y"
+run "apt install build-essential g++ make cmake libsigc++-2.0-dev php libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet sox -y"
 
 say "Disabling apache"
 run "systemctl disable apache2"
@@ -76,9 +76,17 @@ run "systemctl start svxlink_gpio_setup.service"
 run "systemctl start svxlink.service"
 
 say "Write Initial EEPROM settings to the radio module"
-run "/usr/sbin/hotspot"
+run "/usr/sbin/repeater"
 
-say "Edit & rerun /usr/sbin/hotspot to change frequencies/ctcss etc .."
+say "You can monitor RX clipping with this command:"
+
+say ""
+
+say "sudo systemctl stop svxlink && sudo arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null"
+
+say ""
+
+say "Edit & rerun /usr/sbin/repeater to change frequencies/ctcss etc .."
 say "You only need to run this once as the module has eeprom !"
 
 say "Svxlink config is in here: /etc/svxlink/svxlink.conf"

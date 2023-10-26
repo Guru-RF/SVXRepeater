@@ -64,12 +64,12 @@ run "grep -q 'dtparam=act_led_activelow=on' /boot/firmware/config.txt || echo 'd
 say "Disabling HDMI"
 run "perl -i -pe 's/^exit 0/\/usr\/bin\/tvservice -o; exit 0/g' /etc/rc.local"
 
-say "Installing hotspot eeprom configurator"
+say "Installing repeater eeprom configurator"
 run "cp repeater /usr/sbin"
 run "chmod a+x /usr/sbin/repeater"
 
 say "Installing repeater_volume"
-run "cp hotspot_volume /usr/sbin/repeater_volume"
+run "cp repeater_volume /usr/sbin/repeater_volume"
 run "chmod a+x /usr/sbin/repeater_volume"
 
 say "Please reboot system. (sudo reboot)"
