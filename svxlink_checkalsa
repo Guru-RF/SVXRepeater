@@ -12,4 +12,4 @@ do
         sleep 1
 done
 
-/usr/sbin/hotspot_volume
+/usr/sbin/repeater_volume
