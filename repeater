@@ -2,11 +2,11 @@
 
 echo "RX module"
 sa818 --port /dev/ttyAMA4 volume --level 1
-sa818 --port /dev/ttyAMA4 radio --frequency 438.800 --ctcss 131.8,131.8
+sa818 --port /dev/ttyAMA4 radio --frequency 431.200 --ctcss 131.8,131.8
 sa818 --port /dev/ttyAMA4 filters --emphasis no --highpass no --lowpass no
 
 
 echo "TX module"
 sa818 --port /dev/ttyAMA0 volume --level 1
-sa818 --port /dev/ttyAMA0 radio --frequency 431.200 --ctcss 131.8,131.8
+sa818 --port /dev/ttyAMA0 radio --frequency 438.800 --squelch 4
 sa818 --port /dev/ttyAMA0 filters --emphasis no --highpass no --lowpass no
