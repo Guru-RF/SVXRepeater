@@ -10,6 +10,6 @@ if [ "${PTT}" == "1" ]; then
         print "Repeater PA down"
         echo 0 > /sys/class/gpio/gpio5/value
 else
-        echo 1 > /sys/class/gpio/gpio6/value
+        echo 1 > /sys/class/gpio/gpio5/value
 fi
 
