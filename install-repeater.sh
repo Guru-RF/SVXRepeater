@@ -16,8 +16,8 @@ run "cp repeater-fancontroller /usr/sbin"
 run "chmod a+x /usr/sbin/repeater-fancontroller"
 
 say "Installing repeater pa controller"
-run "cp repeater_pacontroller /usr/sbin/repeater_pacontroller"
-run "chmod a+x /usr/sbin/repeater_pacontroller"
+run "cp repeater-pacontroller /usr/sbin/repeater-pacontroller"
+run "chmod a+x /usr/sbin/repeater-pacontroller"
 
 say "Installing repeater-fancontroller.service"
 run "cp repeater-fancontroller.service /lib/systemd/system/repeater-fancontroller.service"
