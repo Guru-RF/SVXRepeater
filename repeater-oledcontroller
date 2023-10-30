@@ -47,12 +47,12 @@ def recvOLED():
 def signal_term_handler(signal, frame):
     global inShutdown
     if inShutdown:
-        for i in range(1, 10):
-            sendOLED('Shutdown in ' + str(10-i))
-            time.sleep(1)
+        for i in range(1, 5):
+            sendOLED('Turn off in ' + str(5-i))
+            time.sleep(0.5)
         sendOLED('Turn off !!!!')
         time.sleep(1)
-        sys.exit(0)
+    sys.exit(0)
  
 signal.signal(signal.SIGTERM, signal_term_handler)
 
