@@ -51,7 +51,7 @@ def signal_term_handler(signal, frame):
         time.sleep(1)
         sendOLED('Turn off !!!!')
         time.sleep(1)
-    elif: 
+    else: 
         sendOLED('Restart OLED...')
         sys.exit(0)
  
