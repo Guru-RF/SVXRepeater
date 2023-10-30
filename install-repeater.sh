@@ -15,6 +15,10 @@ say "Installing repeater fan controller"
 run "cp repeater-fancontroller /usr/sbin"
 run "chmod a+x /usr/sbin/repeater-fancontroller"
 
+say "Installing repeater oled controller"
+run "cp repeater-oledcontroller /usr/sbin"
+run "chmod a+x /usr/sbin/repeater-oledcontroller"
+
 say "Installing repeater pa controller"
 run "cp repeater-pacontroller /usr/sbin/repeater-pacontroller"
 run "chmod a+x /usr/sbin/repeater-pacontroller"
@@ -25,6 +29,13 @@ run "cp repeater-fancontroller.service /lib/systemd/system/repeater-fancontrolle
 say "Installing systemd services"
 run "systemctl enable repeater-fancontroller"
 run "systemctl start repeater-fancontroller"
+
+say "Installing repeater-oledcontroller.service"
+run "cp repeater-oledcontroller.service /lib/systemd/system/repeater-oledcontroller.service"
+
+say "Installing systemd services"
+run "systemctl enable repeater-oledcontroller"
+run "systemctl start repeater-oledcontroller"
 
 
 
