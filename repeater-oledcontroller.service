@@ -5,6 +5,7 @@ After=network.target remote-fs.target syslog.target time.target
 After=svxlink_gpio_setup.service wm8960-soundcard.service svxlink.service
 
 [Service]
+ExecStopPre=sleep 60
 ExecStart=/usr/sbin/repeater-oledcontroller
 Restart=on-failure
 

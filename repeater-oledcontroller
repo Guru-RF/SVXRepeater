@@ -45,11 +45,16 @@ def recvOLED():
             return letter
 
 def signal_term_handler(signal, frame):
+    for i in range(1, 30):
+        sendOLED('Shutdow in ' + str(30-i))
+        time.sleep(1)
     sendOLED('Safe 2 Turn Off')
-    time.sleep(5)
+    time.sleep(1)
     sys.exit(0)
  
 signal.signal(signal.SIGTERM, signal_term_handler)
+
+time.sleep(3)
 
 sendOLED(getIP())
 
