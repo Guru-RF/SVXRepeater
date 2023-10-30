@@ -49,11 +49,11 @@ def signal_term_handler(signal, frame):
     if inShutdown:
         sendOLED('One moment...')
         time.sleep(1)
-        sendOLED('Turn off !!!!')
+        sendOLED('Turning off !!!!')
         time.sleep(1)
     else: 
         sendOLED('Restart OLED...')
-        sys.exit(0)
+    sys.exit(0)
  
 signal.signal(signal.SIGTERM, signal_term_handler)
 
