@@ -25,7 +25,7 @@ def sendOLED(data):
     global ser
     if not ser.isOpen():
         ser = serial.Serial(
-            port='/dev/tty.usbmodem83101', baudrate=4000000
+            port='/dev/ttyACM0', baudrate=4000000
         )
 
     data = data + "\n\r"
@@ -43,7 +43,6 @@ def recvOLED():
             return letter
 
 def signal_term_handler(signal, frame):
-    print("shutdown")
     sendOLED('Safe 2 Turn Off')
     time.sleep(5)
     sys.exit(0)
@@ -60,5 +59,5 @@ while True:
         buf = buf + input.decode('utf-8')
         if input == b'\r':
             if buf == 'shutdown\r':
-                subprocess.run(["ls", "-l"]) 
+                subprocess.run(["shutdown", "-h", "now"]) 
 
