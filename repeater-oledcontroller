@@ -57,7 +57,9 @@ def signal_term_handler(signal, frame):
  
 signal.signal(signal.SIGTERM, signal_term_handler)
 
-time.sleep(3)
+while getIP() == '127.0.0.1':
+    sendOLED('Waiting for IP!')
+    time.sleep(1)
 
 sendOLED(getIP())
 
