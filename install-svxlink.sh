@@ -68,6 +68,8 @@ say "Installing default configurations"
 run "cat gpio.conf > /etc/svxlink/gpio.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf"
 run "cat svxlink_gpio_up > /usr/sbin/svxlink_gpio_up"
+# RGR fix
+run "cat Logic.tcl > /usr/share/svxlink/events.d/Logic.tcl"
 
 say "Installing systemd services"
 run "systemctl enable svxlink_gpio_setup"
