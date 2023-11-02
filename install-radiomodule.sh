@@ -72,4 +72,7 @@ say "Installing repeater_volume"
 run "cp repeater_volume /usr/sbin/repeater_volume"
 run "chmod a+x /usr/sbin/repeater_volume"
 
+say "To disable WiFi run following command before reboot !"
+say "grep -q 'dtoverlay=disable-wifi' /boot/firmware/config.txt || echo 'dtoverlay=disable-wifi' >> /boot/firmware/config.txt"
+
 say "Please reboot system. (sudo reboot)"
